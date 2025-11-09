@@ -1,17 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// ✅ Vite config for React + Tailwind + Vercel deployment
 export default defineConfig({
+  base: './', // fixes relative asset paths on deploy
   plugins: [react()],
-  root: '.',
-  publicDir: 'public',
-  base: './', // 👈 this line is the key fix
   build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: './index.html',
-    },
+    target: 'esnext',
+    minify: 'esbuild',
+    rollupOptions: {} // use Rollup for production
   },
 })
