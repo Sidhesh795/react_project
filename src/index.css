@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* base reset and new light layout to match the screenshots */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
